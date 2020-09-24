@@ -1,0 +1,13 @@
+description: Ubuntu and landscape-agent subordinate
+applications:
+  ubuntu:
+    charm: cs:ubuntu
+    num_units: 1
+  landscape-client:
+    charm: cs:landscape-client
+    options:
+      account-name: david-coronel
+
+relations:
+- - ubuntu
+  - landscape-client

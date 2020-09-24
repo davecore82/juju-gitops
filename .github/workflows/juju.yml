@@ -10,6 +10,6 @@ jobs:
       - run: sudo snap install juju --classic
       - run: sudo snap install juju-wait --classic
       - run: sudo juju bootstrap localhost --config test-mode=true --config automatically-retry-hooks=false
-      - run: sudo juju deploy ./postgresql-ha.yaml
+      - run: sudo juju deploy ./bundle.yaml
       - run: sudo /snap/bin/juju-wait -wv
 
