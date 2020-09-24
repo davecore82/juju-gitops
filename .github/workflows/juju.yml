@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: mxschmitt/action-tmate@v3
+      #- uses: mxschmitt/action-tmate@v3
       - run: sudo snap install juju --classic
       - run: sudo snap install juju-wait --classic
       - run: sudo juju bootstrap localhost --config test-mode=true --config automatically-retry-hooks=false
