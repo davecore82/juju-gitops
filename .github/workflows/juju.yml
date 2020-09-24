@@ -1,0 +1,15 @@
+name: deploy on juju
+on: [push]
+jobs:
+  deploy-in-juju:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      #- uses: actions/setup-node@v1
+      - run: |
+        script/bootstrap
+        sudo snap install juju --classic
+        sudo snap install juju-wait --classic
+      - run: sudo juju bootstrap localhost --config test-mode=true --config automatically-retry-hooks=false
+      - run: sudo juju deploy ./bundle
+
