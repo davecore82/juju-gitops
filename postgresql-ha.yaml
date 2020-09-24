@@ -1,0 +1,9 @@
+description: highly available PostgreSQL cluster
+applications:
+  postgresql:
+    charm: cs:postgresql
+    constraints: cores=4 mem=8G
+    storage:
+      pgdata: 1G
+    num_units: 2
+
